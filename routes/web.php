@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('follow', 'UserFollowController@store')->name('follow');
         Route::delete('unfollow', 'UserFollowController@destroy')->name('unfollow');
     });
+    Route::resource('rest','RestappController', ['only' => ['index', 'show', 'create', 'store', 'destroy']]);
     
     Route::resource('movies', 'MoviesController', ['only' => ['create', 'store', 'destroy']]);
 });
