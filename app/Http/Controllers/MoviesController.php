@@ -34,7 +34,7 @@ class MoviesController extends Controller
             'comment' => $request->comment,
         ]);
 
-        return back();
+        return back()->with('flash_message', '投稿が完了しました');
     }
     public function destroy($id)
     {
@@ -43,8 +43,7 @@ class MoviesController extends Controller
         if (\Auth::id() == $movie->user_id) {
             $movie->delete();
         }
-
-        return back();
+        return back()->with('flash_danger', '動画を削除しました');
     }
     
 }
