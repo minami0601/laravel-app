@@ -29,6 +29,8 @@
             
             </div>
         </div>
+        <p class="">{!! link_to_route('password.change','パスワードを変更する',[],['class'=>'btn btn-outline-danger mt-5'])!!}</p>
+
 
 @endif
 
