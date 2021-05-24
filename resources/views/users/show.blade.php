@@ -29,7 +29,11 @@
             
             </div>
         </div>
-        <p class="">{!! link_to_route('password.change','パスワードを変更する',[],['class'=>'btn btn-outline-danger mt-5'])!!}</p>
+        <div class="d-flex mt-3">
+            <p class="">{!! link_to_route('password.change','パスワードを変更する',[],['class'=>'btn btn-outline-secondary mr-3'])!!}</p>
+            <p class="">{!! link_to_route('users.delete_confirm','退会はこちらから',[],['class'=>'btn btn-outline-danger'])!!}</p>
+        </div>
+
 
 
 @endif

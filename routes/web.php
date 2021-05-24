@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('rest','RestappController', ['only' => ['index', 'show', 'create', 'store', 'destroy']]);
     
     Route::resource('movies', 'MoviesController', ['only' => ['create', 'store', 'destroy']]);
+    Route::get('users','UsersController@delete_confirm')->name('users.delete_confirm');
+    Route::resource('users', 'UsersController', ['only' => ['destroy']]);
     
      Route::get('/password/change','ChangePasswordController@edit')->name('password.form');
     Route::put('/password/change','ChangePasswordController@update')->name('password.change');
