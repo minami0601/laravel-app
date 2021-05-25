@@ -23,6 +23,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 // 追記分
 Route::resource('users', 'UsersController', ['only' => ['show']]);
+Route::resource('movies', 'MoviesController', ['only' => ['index']]);
 
 Route::group(['prefix' => 'users/{id}'], function () {
     Route::get('followings', 'UsersController@followings')->name('followings');
@@ -40,6 +41,8 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::resource('movies', 'MoviesController', ['only' => ['create', 'store', 'destroy']]);
     
-     Route::get('/password/change','ChangePasswordController@edit')->name('password.form');
+    Route::get('/password/change','ChangePasswordController@edit')->name('password.form');
     Route::put('/password/change','ChangePasswordController@update')->name('password.change');
+    
+    Route::post('/ajaxlike', 'MoviesController@ajaxlike')->name('movies.ajaxlike');
 });
