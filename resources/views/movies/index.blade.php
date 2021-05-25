@@ -2,8 +2,21 @@
 
 @section('content')
 
+ <div class="center jumbotron bg-warning">
 
+        <div class="text-center text-white">
+            <h1>YouTubeまとめ × SNS</h1>
+        </div>
 
+    </div>
+    
+    <div class="text-right h4">
+        @if(Auth::check())
+            {{ Auth::user()->name }}
+        @endif
+        
+    </div>
+    @include('commons.tabs',['movies'=>$movies])
         <h2 class="mt-5">Movies</h2>
 
         <div class="movies row mt-5 text-center">
@@ -69,19 +82,19 @@
                     @auth
                         @if($like_model->like_exist(Auth::user()->id,$movie->id))
                             <p class="favorite-marke">
-                                  <span class="js-like-toggle loved"  data-movieid="{{ $movie->id }}"><i class="fas fa-heart"></i></span>
+                                  <span class="js-like-toggle loved"  data-movieid="{{ $movie->id }}"><i class="far fa-heart"></i></span>
                                   <span class="likesCount">{{$movie->likes_count}}</span>
                             </p>
                         @else
                             <p class="favorite-marke">
-                                  <span class="js-like-toggle" data-movieid="{{ $movie->id }}"><i class="fas fa-heart"></i></span>
+                                  <span class="js-like-toggle" data-movieid="{{ $movie->id }}"><i class="far fa-heart"></i></span>
                                   <span class="likesCount">{{$movie->likes_count}}</span>
                             </p>
                         @endif​
                     @endauth
                     @guest
                       <span class="likes">
-                          <i class="fas fa-heart"></i>
+                          <i class="far fa-heart"></i>
                         <span class="like-counter">{{$movie->likes_count}}</span>
                       </span><!-- /.likes -->
                     @endguest

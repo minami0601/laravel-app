@@ -9,14 +9,13 @@
         </div>
 
     </div>
-    
-    <div class="text-right">
-        
+    <div class="text-right h4">
         @if(Auth::check())
             {{ Auth::user()->name }}
         @endif
         
     </div>
+    @include('commons.tabs',['users'=>$users])
     
     @include('users.users', ['users'=>$users])
 

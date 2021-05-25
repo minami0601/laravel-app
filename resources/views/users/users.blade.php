@@ -1,4 +1,4 @@
-<h2 class="mt-5 mb-5">users</h2>
+<h2 class="mt-5 mb-5">Users</h2>
 
 <div class="movies row mt-5 text-center">
 
