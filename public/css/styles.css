@@ -9,3 +9,6 @@
 .button{
     width: 290px;
 }
+.loved  {
+  color: red !important;
+}
