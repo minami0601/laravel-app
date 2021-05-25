@@ -61,7 +61,7 @@
                 <div class="movie text-left d-inline-block">
 
                     <div>
-                        ＠{!! link_to_route('users.show',optional($user)->name,['id'=>$user->id]) !!}
+                        ＠{!! link_to_route('users.show',optional($user)->name,['id'=>optional($user)->id]) !!}
                         @if($movie)
                             <iframe width="290" height="163.125" src="{{ 'https://www.youtube.com/embed/'.$movie->url }}?controls=1&loop=1&playlist={{ $movie->url }}" frameborder="0"></iframe>
                         @else
