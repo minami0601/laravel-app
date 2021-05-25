@@ -33,7 +33,18 @@ class User extends Authenticatable
     {
         return $this->hasMany(Movie::class);
     }
-    
+    protected static function boot() 
+    {
+        parent::boot();
+        static::deleting(function($user) {
+            foreach ($user->movies()->get() as $movie) {
+                $movie->delete();
+            }
+            foreach ($user->likes()->get() as $like) {
+                $like->delete();
+            }
+        });
+    }
     public function likes()
     {
         return $this->hasMany(Like::class);
