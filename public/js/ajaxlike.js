@@ -1,5 +1,6 @@
 $(function () {
-    $('.no-login').on('click', function(){
+    let likeClick = $('.no-login');
+    likeClick.on('click', function(){
         alert('ログインしてください')
     })
     let like = $('.js-like-toggle');
