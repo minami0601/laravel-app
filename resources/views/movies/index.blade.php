@@ -93,7 +93,7 @@
                         @endif​
                     @endauth
                     @guest
-                      <span class="likes">
+                      <span class="likes no-login">
                           <i class="far fa-heart"></i>
                         <span class="like-counter">{{$movie->likes_count}}</span>
                       </span><!-- /.likes -->

@@ -1,9 +1,12 @@
 $(function () {
-    var like = $('.js-like-toggle');
-    var likeMovieId;
+    $('.no-login').on('click', function(){
+        alert('ログインしてください')
+    })
+    let like = $('.js-like-toggle');
+    let likeMovieId;
     
     like.on('click', function () {
-        var $this = $(this);
+        let $this = $(this);
         likeMovieId = $this.data('movieid');
         $.ajax({
                 headers: {
